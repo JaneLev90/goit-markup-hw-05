@@ -77,6 +77,18 @@ a:focus {
 }
 nav .current {
   color: var(--color-active);
+  position: relative;
+}
+.current::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+width: 100%;
+height: 4px;
+  border-bottom: 2px;
+  background-color: var(--color-active);
+  border-radius: 2px;
 }
 .logo {
   font-family: "Raleway";
@@ -104,12 +116,14 @@ nav .current {
   line-height: 1.1;
   color: var(--color-primary);
   cursor: pointer;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.nav-page:hover {
-  color: var(--color-hero);
-}
+.nav-page:hover,
 .nav-page:focus {
-  color: var(--color-hero);
+  color: var(--color-active);
 }
 
 .contacts {
@@ -118,13 +132,16 @@ nav .current {
   display: flex;
   align-items: center;
   color: var(--color-second);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contacts:hover {
-  color: var(--color-active);
-}
+.contacts:hover,
 .contacts:focus {
   color: var(--color-active);
 }
+
 .nav-contacts {
   display: flex;
   margin-left: auto;
@@ -190,13 +207,16 @@ nav .current {
   background-color: var(--color-active);
 
   cursor: pointer;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-button:hover {
-  background-color: var(--color-hero);
-}
+.hero-button:hover,
 .hero-button:focus {
   background-color: var(--color-hero);
 }
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -258,6 +278,24 @@ nav .current {
   text-align: center;
   color: var(--color-primary);
 }
+.section-lists li{
+  position: relative;
+}
+.features-desc{
+  position: absolute;
+  bottom: 0;
+  padding-top: 27px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-fone);
+  text-align: center;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+
+}
 
 /*Секція Команда*/
 .list-profy {
@@ -302,7 +340,12 @@ nav .current {
   display: flex;
   align-items: center;
   justify-content: center;
+  
   color: var(--color-svg);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .name-socials:hover,
 .name-socials:focus {
@@ -335,10 +378,18 @@ nav .current {
   justify-content: center;
 
   color: var(--color-svg);
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-client {
   fill: currentColor;
   outline: none;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -369,6 +420,10 @@ nav .current {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .works-button-list li + li {
   margin-left: 8px;
@@ -396,11 +451,12 @@ nav .current {
 }
 .portfolio-link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-link:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+.portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -462,15 +518,16 @@ nav .current {
 
   color: var(--color-fone);
   cursor: pointer;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-address:hover {
-  color: var(--color-active);
-}
+.footer-address:hover,
 .footer-address:focus {
   color: var(--color-active);
 }
-
-.footer-list-element > li:not(:last-child) {
+ .footer-list-element > li:not(:last-child) {
   margin-bottom: 9px;
 }
 .footer-contacts {
@@ -478,10 +535,12 @@ nav .current {
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-contacts:hover {
-  color: var(--color-active);
-}
+.footer-contacts:hover,
 .footer-contacts:focus {
   color: var(--color-active);
 }
@@ -509,6 +568,10 @@ nav .current {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-socials:hover,
 .footer-socials:focus {
